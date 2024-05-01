@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selector JavaScript</title>
+</head>
+<body>
+    <input type="text" class="formulario" id="nombre" placeholder="Ingrese el nombre" value="Juancito">
+    <input type="text" class="formulario" id="apellido" placeholder="Ingrese el apellido">
+    <input type="text" class="formulario" id="telefono" placeholder="Ingrese el teléfono">
+    <div id="contenido">
+        <span>
+            Contenido 1
+        </span>
+        <span>
+            Contenido 2
+        </span>
+        <span>
+            Contenido 3
+        </span>
+    </div>
+
+    <script>
+        // Imprimir en la consola del Navegador (console.log())
+        console.log(document.getElementById('nombre').value); // Valor del elemento cuyo id es "nombre"
+        console.log(document.getElementById('nombre').value.length); // Cantidad de letras del valor del elemento cuyo id es "nombre"
+        console.log(document.getElementById('nombre').value.length); // Cantidad de letras del valor del elemento cuyo id es "nombre"
+        console.log(document.getElementsByClassName('formulario').length); // Cantidad de elementos con clase "formulario"
+        
+        var formularios = document.getElementsByClassName('formulario');
+        for (var i = 0; i < formularios.length; i++) {
+            console.log(formularios[i].id); // Id de cada uno de los elementos de la clase "formulario"
+        }
+        
+        document.getElementById('contenido').style.backgroundColor = 'red'; // Cambiar el color de fondo del elemento cuyo id es "contenido"
+        
+        console.log(document.querySelectorAll('span').length); // Cantidad de elementos "span" que tiene la página
+    </script>
+</body>
+</html>
