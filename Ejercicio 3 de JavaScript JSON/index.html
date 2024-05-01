@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Buenass</h1>
+    <div id="contenido"></div>
+    <script>
+        // Ejercicio 1
+        let persona1 = {"nombre":"Pepe", "apellido":"Gonzalez"};
+        console.log(persona1);
+
+        // Ejercicio 2
+        console.log(persona1.nombre);
+        console.log(persona1.apellido);
+
+        // Ejercicio 3
+        let persona2 = {"nombre":"Maria", "apellido":"Gimenez"};
+        let personas = [persona1, persona2];
+        personas.forEach(personaActual => {
+            console.log(personaActual);
+        });
+
+        // Ejercicio 4
+        let persona3 = {};
+        persona3.nombre= "Martin";
+        persona3.apellido="Capusoto";
+        persona3.edad =  18;
+        personas.push(persona3);
+        personas.forEach(personaActual => {
+            console.log(personaActual);
+        });
+
+        // Ejercicio 5
+        const myObj = {"nombre": "Juancito", "edad": 31, "ciudad": "Chascomus"};
+        const myJSON = JSON.stringify(myObj);
+        console.log(myJSON);
+        const text = '{"nombre":"Marianela","edad":"14"}';
+        let obj = JSON.parse(text);
+        console.log(obj);
+
+        // Ejercicio 6
+        localStorage.setItem("testJSON", myJSON);
+        let storedText = localStorage.getItem("testJSON");
+        console.log(storedText);
+
+        // Ejercicio 7
+        let miMascota = {"nombre":"Julian", "raza":"pitbul", "edad":5};
+        let descripcion = `El nombre de mi mascota es ${miMascota.nombre} y tiene ${miMascota.edad} años`;
+        console.log(descripcion);
+
+        // Ejercicio 8
+        let objetosRetirados = [
+            {"tipo":"netbook","codigo":15,"retirada":true},
+            {"tipo":"netbook","codigo":1,"retirada":false}
+        ];
+        let miHtml="";
+        document.querySelector("#contenido").innerHTML="";
+        objetosRetirados.forEach(elem=>{
+            miHtml+=`<div>
+                        <span>${elem.tipo}</span>
+                        <span>${elem.codigo}</span>
+                        <span>${elem.retirada}</span>
+                    </div>`;
+        });
+        document.querySelector("#contenido").innerHTML=miHtml;
+
+    </script>
+</body>
+</html>
